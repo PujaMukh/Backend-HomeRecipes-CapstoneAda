@@ -88,4 +88,18 @@ public class Recipe {
     }
 
 
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", madeBy='" + madeBy + '\'' +
+                ", publishedDate=" + publishedDate +
+                ", cuisine=" + cuisine +
+                ", mealType=" + mealType +
+                ", picLink='" + picLink + '\'' +
+                ", ingredients=" + ingredients +
+                ", directions=" + directions +
+                '}';
+    }
 }
