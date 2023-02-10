@@ -2,6 +2,7 @@ package com.example.demo.recipe;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class Recipe {
     )
     private Integer id;
     private String name;
+    private String description;
 
 
     private String madeBy;
@@ -36,10 +38,17 @@ public class Recipe {
 
     private List<String>directions;
 
-    public Recipe(String name, String madeBy, Long publishedDate, Cuisine cuisine, MealType mealType, String picLink, List<String> ingredients, List<String> directions) {
+
+
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+
+    public Recipe(String name, String description, String madeBy, Cuisine cuisine, MealType mealType, String picLink, List<String> ingredients, List<String> directions) {
         this.name = name;
+        this.description = description;
         this.madeBy = madeBy;
-        this.publishedDate = publishedDate;
+        this.publishedDate = Instant.now().toEpochMilli();
         this.cuisine = cuisine;
         this.mealType = mealType;
         this.picLink = picLink;
@@ -55,6 +64,9 @@ public class Recipe {
     }
     public String getName() {
         return name;
+    }
+    public String getDescription() {
+        return description;
     }
 
 
