@@ -2,6 +2,7 @@ package com.example.demo.recipe;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.time.Instant;
 import java.util.List;
@@ -11,7 +12,6 @@ import java.util.Optional;
 public class RecipeService {
     private final RecipeRepository recipeRepository;
     @Autowired
-
     public RecipeService(RecipeRepository recipeRepository) {
         this.recipeRepository = recipeRepository;
     }
@@ -48,5 +48,12 @@ public class RecipeService {
 //        System.out.println(recipe);
 
     }
+public void deleteRecipe(Integer id) {
+//        boolean exists = recipeRepository.exists(Example);
+//        if (!exists) {
+//            throw new IllegalStateException("Student with id"+ id + "doesn't exist");
+//        }
+        recipeRepository.deleteById(id);
+}
 
 }

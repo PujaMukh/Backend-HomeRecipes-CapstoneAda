@@ -67,4 +67,8 @@ public class RecipeController {
     public void registerNewRecipe(@RequestBody Recipe recipe) {
         recipeService.addNewRecipe(recipe);
     }
+    @DeleteMapping(path = "/delete/{id}")
+    public void deleteRecipe(@PathVariable("id") Integer id) {
+        recipeService.deleteRecipe(id);
+    }
 }
